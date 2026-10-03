@@ -1,0 +1,46 @@
+{
+  "schema": "dvote.campaign.v1",
+  "id": "make-ground-001",
+  "title": "MAKE GROUND — Better Hole 001",
+  "subtitle": "One passage. One human hinge. One return.",
+  "author": "LemonPRESS · The Static Collective",
+  "version": "1.0.0",
+  "progression": {
+    "mode": "daily",
+    "after": "hold"
+  },
+  "source": {
+    "title": "MAKE GROUND — A Field Manual for Growing Possible Futures",
+    "source_kind": "book_passage",
+    "source_ref": "Chapter 1 — Make Better Holes / The Better Hole Test",
+    "drive_file_id": "1pbwTX_c--vVLowiQ_lFcxFzFIViosYO9w5wXnJ1nsb0"
+  },
+  "encounters": [
+    {
+      "id": "better-hole-001",
+      "title": "Make a Better Hole",
+      "text": "Choose one ordinary unresolved problem. Before trying to solve it, change the representation: draw it, map it, photograph it from another angle, make a timeline, or arrange the parts physically. The test is not whether you solve the old question. The test is whether a new question becomes reachable.",
+      "carry": "NEW REACHABILITY ≠ TRUTH.",
+      "doors": [
+        {
+          "id": "take",
+          "title": "TAKE",
+          "disposition": "take",
+          "prompt": "Run the Better Hole Test now. Make one representation change, notice one newly reachable question, and return with only what actually happened."
+        },
+        {
+          "id": "hold",
+          "title": "HOLD",
+          "disposition": "hold",
+          "prompt": "Do not run the experiment yet. Preserve the unresolved problem and record what condition, evidence, or readiness is still missing."
+        },
+        {
+          "id": "pass",
+          "title": "PASS",
+          "disposition": "pass",
+          "prompt": "Decline this door. Record why this is the wrong problem, wrong time, or wrong instrument rather than forcing participation."
+        }
+      ]
+    }
+  ]
+}
