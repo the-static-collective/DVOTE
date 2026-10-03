@@ -17,3 +17,20 @@ No points, streak punishment, spiritual scoring, or claims that coincidence is r
 ## Status
 
 Genesis seed. The first playable experiment is being built from here.
+
+
+## MAKE GROUND loop
+
+The `make-ground-001` campaign is the first book → life-game crossing specimen.
+
+It exposes an explicit TAKE / HOLD / PASS human hinge, writes `dvote.witness-receipt.v1`,
+and lets the reader export that receipt as JSON for a receiving system to inspect.
+
+Open with:
+
+```text
+?campaign=make-ground-001
+```
+
+The paired STATIC OS crossing preserves HOLD/PASS as non-contact states and only lets
+TAKE with an actual witness enter the provenance/reorientation loop.
