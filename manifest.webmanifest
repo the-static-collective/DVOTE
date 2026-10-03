@@ -1,0 +1,18 @@
+{
+  "name": "DVOTE — LifeGame",
+  "short_name": "DVOTE",
+  "description": "A phone-first daily devotion and life game.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#17140f",
+  "theme_color": "#17140f",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
