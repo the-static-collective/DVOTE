@@ -8,6 +8,7 @@
   const chosen=()=>edition==="current"?all():all().slice(0,Number(edition));
   const echoes=r=>typeof topEchoes==="function"?topEchoes(r):[];
   const inventory=r=>r.filter(x=>x.object).map(x=>({day:x.day,object:x.object,encounter:x.encounter}));
+  const composer=()=>window.DVOTEComposer?.exportState?.()||null;
   const label=n=>edition==="current"?`Current Edition · ${n} receipt${n===1?"":"s"}`:`${edition}-Receipt Edition`;
 
   function payload(){
@@ -21,6 +22,7 @@
       receipts:r,
       inventory:inventory(r),
       echoes:echoes(r).map(([word,count])=>({word,count})),
+      composer:composer(),
       law:"Receipt = what happened, not what DVOTE claims it meant."
     };
   }
@@ -43,6 +45,7 @@
     if(!p.receipts.length) return `<div class="memo-empty"><div class="tiny-label">NO MATERIAL YET</div><p>MEMENTO begins after the first witnessed crossing.</p></div>`;
     const inv=p.inventory.length?p.inventory.map(x=>`<li><strong>Day ${String(x.day).padStart(3,"0")}</strong> — ${esc(x.object)}</li>`).join(""):"<li>Nothing was deliberately carried forward.</li>";
     const ech=p.echoes.length?p.echoes.map(x=>`<li>${esc(x.word)} ×${x.count}</li>`).join(""):"<li>No word repeated strongly enough to register.</li>";
+    const comp=p.composer?.decisions?.length?p.composer.decisions.slice(-8).map(x=>`<li><strong>${esc(x.action)}</strong> — ${esc(x.label)} ×${x.count}</li>`).join(""):"<li>No Composer selections were made.</li>";
     return `<article class="memo-page memo-cover">
       <div class="memo-kicker">DVOTE / MEMENTO</div><div class="memo-sigil">${p.receipts.length}</div>
       <h2>What Survived</h2><p class="memo-campaign">${esc(p.campaign.title)}</p>
@@ -51,6 +54,7 @@
     ${p.receipts.map(receiptPage).join("")}
     <article class="memo-page memo-index"><div class="memo-folio">WHAT WAS CARRIED</div><h2>Inventory</h2><ul>${inv}</ul></article>
     <article class="memo-page memo-index"><div class="memo-folio">WHAT REPEATED</div><h2>Echoes</h2><ul>${ech}</ul><p class="memo-law">Recurrence is shown, not interpreted.</p></article>
+    <article class="memo-page memo-index"><div class="memo-folio">NEARBY DOORS</div><h2>Composer selections</h2><ul>${comp}</ul><p class="memo-law">Recommendation ≠ selection. Selection ≠ interpretation.</p></article>
     <article class="memo-page memo-colophon"><div class="memo-sigil">◇</div><h2>Held.</h2><p>These pages preserve what the reader witnessed. They do not decide what any trace meant.</p><p class="memo-law">Receipt = what happened, not what DVOTE claims it meant.</p></article>`;
   }
 

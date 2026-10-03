@@ -1,4 +1,4 @@
-const CACHE = "dvote-memento-001";
+const CACHE = "dvote-composer-001";
 const SHELL = [
   "./",
   "index.html",
@@ -6,6 +6,8 @@ const SHELL = [
   "app.js",
   "memento.js",
   "memento.css",
+  "composer.js",
+  "composer.css",
   "manifest.webmanifest",
   "icon.svg",
   "campaigns/catalog.json",
