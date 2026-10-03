@@ -1,9 +1,11 @@
-const CACHE = "dvote-artifact-layer-001";
+const CACHE = "dvote-memento-001";
 const SHELL = [
   "./",
   "index.html",
   "styles.css",
   "app.js",
+  "memento.js",
+  "memento.css",
   "manifest.webmanifest",
   "icon.svg",
   "campaigns/catalog.json",
