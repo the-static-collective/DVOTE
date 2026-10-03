@@ -6,8 +6,8 @@ let selectedDoor = null;
 const $ = (id) => document.getElementById(id);
 
 function campaignSlug() {
-  const requested = new URLSearchParams(location.search).get("campaign") || "field-notes-001";
-  return /^[a-z0-9-]+$/.test(requested) ? requested : "field-notes-001";
+  const requested = new URLSearchParams(location.search).get("campaign") || "paula-42-hope-restoration";
+  return /^[a-z0-9-]+$/.test(requested) ? requested : "paula-42-hope-restoration";
 }
 
 async function loadCampaign() {
