@@ -1,0 +1,1173 @@
+{
+  "schema": "dvote.campaign.v1",
+  "id": "paula-42-hope-restoration",
+  "title": "42-Day Devotional Guide",
+  "subtitle": "A Journey of Hope and Restoration",
+  "author": "Paula King",
+  "version": "1.0.0",
+  "source": {
+    "title": "42-Day Devotional Guide: A Journey of Hope and Restoration",
+    "author": "Paula King",
+    "year": 2026,
+    "source_file": "Paula King-Devotional Guide_Designed.pdf",
+    "adaptation": "DVOTE playable campaign"
+  },
+  "progression": {
+    "mode": "daily",
+    "after": "hold"
+  },
+  "encounters": [
+    {
+      "id": "day-01",
+      "source_day": 1,
+      "title": "God’s Nearness in Every Step",
+      "text": "You do not begin this journey alone. Before the next step is visible, God is already near; today’s grace does not need tomorrow’s certainty.",
+      "carry": "Let today be held before tomorrow is solved.",
+      "scriptures": [
+        "Matthew 6:32",
+        "Psalm 146:9"
+      ],
+      "doors": [
+        {
+          "id": "notice-nearness",
+          "title": "NOTICE NEARNESS",
+          "prompt": "Stop for two quiet minutes and name three signs of care already present around you."
+        },
+        {
+          "id": "set-down-tomorrow",
+          "title": "SET DOWN TOMORROW",
+          "prompt": "Write one worry about the future, then choose one thing that actually belongs to today."
+        },
+        {
+          "id": "tend-something-living",
+          "title": "TEND SOMETHING LIVING",
+          "prompt": "Water a plant, feed an animal, check on a person, or make one small act of nurture visible."
+        }
+      ]
+    },
+    {
+      "id": "day-02",
+      "source_day": 2,
+      "title": "Finding Fulfillment in God Alone",
+      "text": "Restless searching can become its own hunger. Bring the need beneath the search into prayer, and test what changes when you stop chasing long enough to receive.",
+      "carry": "The need beneath the search is worth naming.",
+      "scriptures": [
+        "Philippians 4:19"
+      ],
+      "doors": [
+        {
+          "id": "name-the-hunger",
+          "title": "NAME THE HUNGER",
+          "prompt": "Write what you are actually seeking beneath the next answer, purchase, person, or opportunity."
+        },
+        {
+          "id": "pray-before-pursuit",
+          "title": "PRAY BEFORE PURSUIT",
+          "prompt": "Before your next search or message, pause and pray about the need first."
+        },
+        {
+          "id": "receive-enough",
+          "title": "RECEIVE ENOUGH",
+          "prompt": "Choose one provision already present today and use it fully before looking for more."
+        }
+      ]
+    },
+    {
+      "id": "day-03",
+      "source_day": 3,
+      "title": "Walking in Purpose and Obedience",
+      "text": "Purpose is not only discovered in grand plans; it is often revealed by doing the next faithful thing you already know to do. Gifts become direction when they are practiced.",
+      "carry": "The next faithful step can be smaller than the whole calling.",
+      "scriptures": [
+        "James 1:22-24"
+      ],
+      "doors": [
+        {
+          "id": "do-the-known-thing",
+          "title": "DO THE KNOWN THING",
+          "prompt": "Complete one good action you have already understood but postponed."
+        },
+        {
+          "id": "name-a-gift",
+          "title": "NAME A GIFT",
+          "prompt": "Write one ability you have been given and one person or place it could serve."
+        },
+        {
+          "id": "listen-before-planning",
+          "title": "LISTEN BEFORE PLANNING",
+          "prompt": "Take five quiet minutes before making today’s next major choice."
+        }
+      ]
+    },
+    {
+      "id": "day-04",
+      "source_day": 4,
+      "title": "Freedom Through Forgiveness",
+      "text": "Forgiveness can release a burden without pretending harm was harmless or requiring unsafe closeness. Place what you cannot carry into God’s hands and make room for healing.",
+      "carry": "Release does not require denial.",
+      "scriptures": [
+        "Mark 11:25"
+      ],
+      "doors": [
+        {
+          "id": "name-the-weight",
+          "title": "NAME THE WEIGHT",
+          "prompt": "Privately write the grievance you are carrying without editing or minimizing it."
+        },
+        {
+          "id": "release-without-returning",
+          "title": "RELEASE WITHOUT RETURNING",
+          "prompt": "Choose one safe act of letting go that does not require renewed contact or reconciliation."
+        },
+        {
+          "id": "bless-at-a-distance",
+          "title": "BLESS AT A DISTANCE",
+          "prompt": "Pray for freedom from bitterness while keeping any boundary that remains necessary."
+        }
+      ]
+    },
+    {
+      "id": "day-05",
+      "source_day": 5,
+      "title": "Protected by Divine Providence",
+      "text": "The ark is remembered here as a place of provision, limits, waiting, and protection. Some seasons are not for acceleration; they are for being sustained until the waters change.",
+      "carry": "A pause can also be provision.",
+      "scriptures": [
+        "Genesis 7:1",
+        "Jeremiah 29:11",
+        "Matthew 6:25-26"
+      ],
+      "doors": [
+        {
+          "id": "count-the-provisions",
+          "title": "COUNT THE PROVISIONS",
+          "prompt": "List what is already sustaining you today: food, shelter, skill, person, tool, time."
+        },
+        {
+          "id": "prepare-today",
+          "title": "PREPARE TODAY",
+          "prompt": "Make one practical preparation for the next 24 hours instead of trying to control the whole future."
+        },
+        {
+          "id": "honor-the-pause",
+          "title": "HONOR THE PAUSE",
+          "prompt": "Identify one area where waiting may be wiser than forcing movement."
+        }
+      ]
+    },
+    {
+      "id": "day-06",
+      "source_day": 6,
+      "title": "Called to Be a Peacemaker",
+      "text": "Peace is not passivity. It is the deliberate work of refusing needless heat, speaking healing where possible, and carrying calm without surrendering truth.",
+      "carry": "Lowering the temperature is real work.",
+      "scriptures": [
+        "Hebrews 12:14"
+      ],
+      "doors": [
+        {
+          "id": "lower-one-degree",
+          "title": "LOWER ONE DEGREE",
+          "prompt": "In one tense interaction, reduce the heat without abandoning the truth."
+        },
+        {
+          "id": "repair-something-small",
+          "title": "REPAIR SOMETHING SMALL",
+          "prompt": "Clarify one misunderstanding, apologize for one real wrong, or remove one needless irritation."
+        },
+        {
+          "id": "refuse-the-bait",
+          "title": "REFUSE THE BAIT",
+          "prompt": "Let one argument pass without joining it."
+        }
+      ]
+    },
+    {
+      "id": "day-07",
+      "source_day": 7,
+      "title": "Embracing Your Divine Gifts",
+      "text": "A gift becomes fruitful by being used. The smallest ability can become a channel of encouragement when it is practiced and offered rather than hidden.",
+      "carry": "Use is one form of gratitude.",
+      "scriptures": [
+        "Luke 16:10"
+      ],
+      "doors": [
+        {
+          "id": "use-the-gift",
+          "title": "USE THE GIFT",
+          "prompt": "Spend fifteen focused minutes using one ability you have been neglecting."
+        },
+        {
+          "id": "offer-the-gift",
+          "title": "OFFER THE GIFT",
+          "prompt": "Give a small piece of your skill to someone who could genuinely use it."
+        },
+        {
+          "id": "name-the-seed",
+          "title": "NAME THE SEED",
+          "prompt": "Record one gift that still feels undeveloped and one way to water it this week."
+        }
+      ]
+    },
+    {
+      "id": "day-08",
+      "source_day": 8,
+      "title": "Perfectly Made in His Image",
+      "text": "Worth is not a performance review. Let your limits interrupt the demand to earn what was already given: identity, breath, and belonging before achievement.",
+      "carry": "You are not required to earn your existence today.",
+      "scriptures": [
+        "Romans 12:2",
+        "Psalm 139:14"
+      ],
+      "doors": [
+        {
+          "id": "drop-one-scorecard",
+          "title": "DROP ONE SCORECARD",
+          "prompt": "Choose one metric, comparison, or productivity standard you will not use to judge yourself today."
+        },
+        {
+          "id": "thank-your-body",
+          "title": "THANK YOUR BODY",
+          "prompt": "Name one ordinary thing your body carried you through today and give thanks for it."
+        },
+        {
+          "id": "rest-undeserved",
+          "title": "REST UNDESERVED",
+          "prompt": "Take a brief period of rest without making it a reward for finishing something first."
+        }
+      ]
+    },
+    {
+      "id": "day-09",
+      "source_day": 9,
+      "title": "Seeing Yourself as God’s Masterpiece",
+      "text": "Look again without using the world’s comparison machinery. The devotional asks you to see intention where you have learned to see defect and divine image where you have learned to see insufficiency.",
+      "carry": "Comparison is not a mirror.",
+      "scriptures": [
+        "1 Peter 3:3-4",
+        "Song of Solomon 4:7",
+        "Colossians 3:12",
+        "1 Corinthians 3:16",
+        "Genesis 1:27"
+      ],
+      "doors": [
+        {
+          "id": "mirror-without-critique",
+          "title": "MIRROR WITHOUT CRITIQUE",
+          "prompt": "Look at yourself for thirty seconds without correcting, ranking, or insulting anything you see."
+        },
+        {
+          "id": "wear-the-intent",
+          "title": "WEAR THE INTENT",
+          "prompt": "Choose one thing to wear, carry, or do because it feels honestly like you rather than because it wins approval."
+        },
+        {
+          "id": "break-a-comparison",
+          "title": "BREAK A COMPARISON",
+          "prompt": "Notice one comparison today and replace it with a factual description of what is actually yours."
+        }
+      ]
+    },
+    {
+      "id": "day-10",
+      "source_day": 10,
+      "title": "Strength in the Midst of Fear",
+      "text": "Fear can make absence feel like abandonment. Return to what is promised rather than what panic predicts, then take one small step that fear would rather postpone.",
+      "carry": "Feelings can report weather without defining the whole sky.",
+      "scriptures": [
+        "2 Corinthians 12:9",
+        "Deuteronomy 31:6"
+      ],
+      "doors": [
+        {
+          "id": "ground-the-room",
+          "title": "GROUND THE ROOM",
+          "prompt": "Name five things you can see, four you can touch, and one next safe action."
+        },
+        {
+          "id": "take-the-small-brave-step",
+          "title": "TAKE THE SMALL BRAVE STEP",
+          "prompt": "Do one bounded thing fear has been delaying."
+        },
+        {
+          "id": "name-the-unseen-support",
+          "title": "NAME THE UNSEEN SUPPORT",
+          "prompt": "Write one person, promise, resource, or practice that remains present even when you do not feel strong."
+        }
+      ]
+    },
+    {
+      "id": "day-11",
+      "source_day": 11,
+      "title": "Trusting God’s Path",
+      "text": "Trust does not erase choice; it changes how choice is carried. Commit your work, release the fantasy of total control, and test whether alignment produces more peace than force.",
+      "carry": "Guidance can be followed without seeing the entire road.",
+      "scriptures": [
+        "Proverbs 16:3",
+        "Mark 7:20-23",
+        "Isaiah 55:8"
+      ],
+      "doors": [
+        {
+          "id": "commit-the-work",
+          "title": "COMMIT THE WORK",
+          "prompt": "Name one task and consciously dedicate the way you do it, not just its outcome."
+        },
+        {
+          "id": "release-one-control",
+          "title": "RELEASE ONE CONTROL",
+          "prompt": "Identify one result you cannot command and stop rehearsing how to force it."
+        },
+        {
+          "id": "choose-alignment",
+          "title": "CHOOSE ALIGNMENT",
+          "prompt": "When two options appear, favor the one that better matches the values you say you serve."
+        }
+      ]
+    },
+    {
+      "id": "day-12",
+      "source_day": 12,
+      "title": "Shining as God’s Light",
+      "text": "A hidden gift cannot illuminate anyone. You do not need a grand platform; one ordinary act of courage, creation, or kindness can uncover the light already entrusted to you.",
+      "carry": "Light only needs somewhere to land.",
+      "scriptures": [
+        "Psalm 119:105",
+        "Numbers 6:24-26",
+        "John 1:5"
+      ],
+      "doors": [
+        {
+          "id": "show-a-small-light",
+          "title": "SHOW A SMALL LIGHT",
+          "prompt": "Share one useful creation, word, skill, or encouragement you would normally keep hidden."
+        },
+        {
+          "id": "brighten-the-room",
+          "title": "BRIGHTEN THE ROOM",
+          "prompt": "Improve one physical space for the next person who enters it."
+        },
+        {
+          "id": "serve-without-credit",
+          "title": "SERVE WITHOUT CREDIT",
+          "prompt": "Do one helpful thing that does not need your name attached."
+        }
+      ]
+    },
+    {
+      "id": "day-13",
+      "source_day": 13,
+      "title": "Holding On to God’s Presence",
+      "text": "Loss and rearrangement can feel like abandonment, yet clearing and pruning may create room for what could not grow before. Name what changed without pretending it did not hurt.",
+      "carry": "Absence and abandonment are not always the same thing.",
+      "scriptures": [
+        "Habakkuk 3:17-18"
+      ],
+      "doors": [
+        {
+          "id": "name-what-left",
+          "title": "NAME WHAT LEFT",
+          "prompt": "Write one thing you miss without trying to make it positive."
+        },
+        {
+          "id": "clear-one-space",
+          "title": "CLEAR ONE SPACE",
+          "prompt": "Remove one object, obligation, or digital clutter that no longer serves the life you are building."
+        },
+        {
+          "id": "find-water-in-the-desert",
+          "title": "FIND WATER IN THE DESERT",
+          "prompt": "Do one small act that restores you in a dry season."
+        }
+      ]
+    },
+    {
+      "id": "day-14",
+      "source_day": 14,
+      "title": "Strength in the Midst of Struggles",
+      "text": "Old pain can arrive disguised as the present. Separate memory from current fact, refuse the claim that the pit is permanent, and let dependence become a form of strength rather than shame.",
+      "carry": "The pit is a location, not an identity.",
+      "scriptures": [
+        "Galatians 5:22"
+      ],
+      "doors": [
+        {
+          "id": "past-or-present",
+          "title": "PAST OR PRESENT",
+          "prompt": "Write one fear and mark which part belongs to now and which part belongs to memory."
+        },
+        {
+          "id": "move-the-body",
+          "title": "MOVE THE BODY",
+          "prompt": "Take a short walk, stretch, wash, or change rooms to interrupt the feeling of being trapped."
+        },
+        {
+          "id": "ask-for-strength",
+          "title": "ASK FOR STRENGTH",
+          "prompt": "Pray, call someone trustworthy, or use one support you would normally avoid needing."
+        }
+      ]
+    },
+    {
+      "id": "day-15",
+      "source_day": 15,
+      "title": "Living with Purpose",
+      "text": "Purpose competes with drift. You do not have to solve your whole calling today; give one piece of your attention to the work, relationship, or service that feels most alive.",
+      "carry": "Purpose grows where attention is repeatedly given.",
+      "scriptures": [
+        "Joshua 1:9",
+        "Zephaniah 3:17"
+      ],
+      "doors": [
+        {
+          "id": "fifteen-minutes-for-purpose",
+          "title": "FIFTEEN MINUTES FOR PURPOSE",
+          "prompt": "Give fifteen uninterrupted minutes to something you believe you were made to do."
+        },
+        {
+          "id": "mute-one-distraction",
+          "title": "MUTE ONE DISTRACTION",
+          "prompt": "Remove one source of noise for the rest of today."
+        },
+        {
+          "id": "pass-courage-forward",
+          "title": "PASS COURAGE FORWARD",
+          "prompt": "Encourage someone else toward a good thing they have been afraid to begin."
+        }
+      ]
+    },
+    {
+      "id": "day-16",
+      "source_day": 16,
+      "title": "The God of the Impossible",
+      "text": "An impossible-looking situation can be held differently when it is no longer carried as a solitary human project. Name the mountain clearly, then look for the next step rather than demanding the whole bridge.",
+      "carry": "The next step does not need to contain the whole miracle.",
+      "scriptures": [
+        "Isaiah 41:10"
+      ],
+      "doors": [
+        {
+          "id": "name-the-impossible",
+          "title": "NAME THE IMPOSSIBLE",
+          "prompt": "State the situation plainly without exaggerating or minimizing it."
+        },
+        {
+          "id": "take-the-human-sized-step",
+          "title": "TAKE THE HUMAN-SIZED STEP",
+          "prompt": "Do the smallest concrete action that is actually yours to do."
+        },
+        {
+          "id": "pray-bigger-than-the-plan",
+          "title": "PRAY BIGGER THAN THE PLAN",
+          "prompt": "Ask for an outcome you cannot manufacture, then release the method."
+        }
+      ]
+    },
+    {
+      "id": "day-17",
+      "source_day": 17,
+      "title": "Victorious in His Strength",
+      "text": "Victory here is not the absence of difficulty; it is refusing to let fear become your commander. Stand inside the strength you have been given and face one obstacle without pretending you face it alone.",
+      "carry": "Courage can move before confidence arrives.",
+      "scriptures": [
+        "Isaiah 54:17"
+      ],
+      "doors": [
+        {
+          "id": "face-the-postponed-thing",
+          "title": "FACE THE POSTPONED THING",
+          "prompt": "Open, begin, call, or address one task you have been avoiding."
+        },
+        {
+          "id": "speak-courage",
+          "title": "SPEAK COURAGE",
+          "prompt": "Write one truthful sentence you can return to when fear gets loud."
+        },
+        {
+          "id": "hold-a-boundary",
+          "title": "HOLD A BOUNDARY",
+          "prompt": "Protect one necessary limit without hostility or apology theater."
+        }
+      ]
+    },
+    {
+      "id": "day-18",
+      "source_day": 18,
+      "title": "Resting in God’s Sovereignty",
+      "text": "Trust and effort are not enemies. Practice the gifts you have, do the work faithfully, and release the demand that your effort control every outcome.",
+      "carry": "Work can be faithful without becoming sovereign.",
+      "scriptures": [
+        "Philippians 4:13"
+      ],
+      "doors": [
+        {
+          "id": "practice-the-tool",
+          "title": "PRACTICE THE TOOL",
+          "prompt": "Use one gift for twenty focused minutes simply to strengthen it."
+        },
+        {
+          "id": "do-the-work-well",
+          "title": "DO THE WORK WELL",
+          "prompt": "Choose one ordinary task and give it full attention."
+        },
+        {
+          "id": "release-the-result",
+          "title": "RELEASE THE RESULT",
+          "prompt": "When the task is done, stop adjusting it just to calm anxiety about the outcome."
+        }
+      ]
+    },
+    {
+      "id": "day-19",
+      "source_day": 19,
+      "title": "Calling on the God Who Sees All",
+      "text": "What feels tangled to you is still visible to God. Bring the mess into prayer, then prune one piece of needless complexity so that what matters can breathe.",
+      "carry": "Being seen can come before being solved.",
+      "scriptures": [
+        "Jeremiah 33:3"
+      ],
+      "doors": [
+        {
+          "id": "name-the-tangle",
+          "title": "NAME THE TANGLE",
+          "prompt": "Write the mess as a short list instead of carrying it as one giant feeling."
+        },
+        {
+          "id": "prune-one-thing",
+          "title": "PRUNE ONE THING",
+          "prompt": "Remove one obligation, object, tab, or commitment that is only adding noise."
+        },
+        {
+          "id": "call-his-name",
+          "title": "CALL HIS NAME",
+          "prompt": "Take three uninterrupted minutes to pray before taking another organizing action."
+        }
+      ]
+    },
+    {
+      "id": "day-20",
+      "source_day": 20,
+      "title": "Peace in the Midst of Conflict",
+      "text": "Conflict can recruit your body before your wisdom arrives. Create a little space between provocation and response, and let peace become an active discipline rather than a mood you wait to feel.",
+      "carry": "A delayed reaction can become a chosen response.",
+      "scriptures": [
+        "1 Thessalonians 4:12"
+      ],
+      "doors": [
+        {
+          "id": "take-the-breath",
+          "title": "TAKE THE BREATH",
+          "prompt": "Before replying to tension, take one slow breath longer than feels necessary."
+        },
+        {
+          "id": "delay-the-reply",
+          "title": "DELAY THE REPLY",
+          "prompt": "Give one non-urgent conflict at least twenty minutes before responding."
+        },
+        {
+          "id": "repair-without-erasing-yourself",
+          "title": "REPAIR WITHOUT ERASING YOURSELF",
+          "prompt": "Offer one fair repair while keeping any truth or boundary that still matters."
+        }
+      ]
+    },
+    {
+      "id": "day-21",
+      "source_day": 21,
+      "title": "Strength in Every Trial",
+      "text": "You are allowed to be weary. The invitation is not to prove endurance by carrying everything alone, but to bring the burden where rest, help, and restoration are possible.",
+      "carry": "Strength sometimes looks like putting something down.",
+      "scriptures": [
+        "Matthew 11:28"
+      ],
+      "doors": [
+        {
+          "id": "set-down-one-burden",
+          "title": "SET DOWN ONE BURDEN",
+          "prompt": "Name one thing you do not need to carry for the next hour."
+        },
+        {
+          "id": "accept-help",
+          "title": "ACCEPT HELP",
+          "prompt": "Let someone assist you with one real task instead of automatically refusing."
+        },
+        {
+          "id": "rest-on-purpose",
+          "title": "REST ON PURPOSE",
+          "prompt": "Take a short period of recovery before you feel you have earned it."
+        }
+      ]
+    },
+    {
+      "id": "day-22",
+      "source_day": 22,
+      "title": "Your True Worth in God",
+      "text": "If love must constantly be chased, it cannot reliably tell you who you are. Return your worth to a source deeper than other people’s approval and keep doing the work you were shaped to do.",
+      "carry": "Approval is information; it is not identity.",
+      "scriptures": [
+        "Ephesians 2:10"
+      ],
+      "doors": [
+        {
+          "id": "stop-one-chase",
+          "title": "STOP ONE CHASE",
+          "prompt": "Do not send, post, explain, or perform one thing whose main purpose is to extract reassurance."
+        },
+        {
+          "id": "do-your-created-work",
+          "title": "DO YOUR CREATED WORK",
+          "prompt": "Spend time on one task that expresses a real gift or responsibility."
+        },
+        {
+          "id": "name-what-cannot-be-voted-away",
+          "title": "NAME WHAT CANNOT BE VOTED AWAY",
+          "prompt": "Write three qualities or callings that remain yours even when someone disapproves."
+        }
+      ]
+    },
+    {
+      "id": "day-23",
+      "source_day": 23,
+      "title": "Fear Not, I Am With You",
+      "text": "The unknown is not empty simply because you cannot see through it. Let courage be measured by the next faithful movement, not by the disappearance of fear.",
+      "carry": "You can walk with fear without handing it the map.",
+      "scriptures": [
+        "Isaiah 41:13"
+      ],
+      "doors": [
+        {
+          "id": "enter-a-little-unknown",
+          "title": "ENTER A LITTLE UNKNOWN",
+          "prompt": "Try one safe thing whose outcome you cannot fully predict."
+        },
+        {
+          "id": "mute-a-negative-voice",
+          "title": "MUTE A NEGATIVE VOICE",
+          "prompt": "Reduce contact with one source of needless discouragement for today."
+        },
+        {
+          "id": "move-the-dream-one-inch",
+          "title": "MOVE THE DREAM ONE INCH",
+          "prompt": "Take one concrete step toward something meaningful that fear keeps postponing."
+        }
+      ]
+    },
+    {
+      "id": "day-24",
+      "source_day": 24,
+      "title": "Beauty for Ashes",
+      "text": "Ashes are evidence that something burned; they are not proof that nothing can grow there. Look for what can be healed, remade, or carried forward without denying what was lost.",
+      "carry": "Broken material can still become building material.",
+      "scriptures": [
+        "2 Corinthians 5:21",
+        "Romans 8:1-2"
+      ],
+      "doors": [
+        {
+          "id": "salvage-one-thing",
+          "title": "SALVAGE ONE THING",
+          "prompt": "Recover one useful object, lesson, phrase, or practice from a difficult season."
+        },
+        {
+          "id": "do-the-healing-action",
+          "title": "DO THE HEALING ACTION",
+          "prompt": "Choose one small action that supports your body, home, finances, relationships, or spirit."
+        },
+        {
+          "id": "make-beauty-from-the-remains",
+          "title": "MAKE BEAUTY FROM THE REMAINS",
+          "prompt": "Create something small from material that would otherwise be discarded."
+        }
+      ]
+    },
+    {
+      "id": "day-25",
+      "source_day": 25,
+      "title": "Serve Me in Faith",
+      "text": "Do not wait for perfect conditions before offering what you have. Faithful service begins with the imperfect gift in your hands and the courage to use it well.",
+      "carry": "An honest offering can precede polish.",
+      "scriptures": [
+        "1 John 3:1",
+        "John 1:12"
+      ],
+      "doors": [
+        {
+          "id": "ship-the-imperfect-good",
+          "title": "SHIP THE IMPERFECT GOOD",
+          "prompt": "Finish and share one useful thing at a good-enough stage."
+        },
+        {
+          "id": "do-it-with-fear-present",
+          "title": "DO IT WITH FEAR PRESENT",
+          "prompt": "Complete one worthy action without waiting to feel fearless."
+        },
+        {
+          "id": "serve-quietly",
+          "title": "SERVE QUIETLY",
+          "prompt": "Help one person in a way that does not depend on recognition."
+        }
+      ]
+    },
+    {
+      "id": "day-26",
+      "source_day": 26,
+      "title": "Designed for Divine Purpose",
+      "text": "Difference is not automatically defect. What makes you unlike the people you compare yourself with may be part of the exact equipment your path requires.",
+      "carry": "Uniqueness becomes useful when comparison loosens its grip.",
+      "scriptures": [
+        "Ephesians 2:10"
+      ],
+      "doors": [
+        {
+          "id": "catch-the-comparison",
+          "title": "CATCH THE COMPARISON",
+          "prompt": "Notice one moment of comparison and name the specific difference without ranking it."
+        },
+        {
+          "id": "use-the-odd-tool",
+          "title": "USE THE ODD TOOL",
+          "prompt": "Use one strength, interest, or perspective that is particularly yours."
+        },
+        {
+          "id": "ask-a-witness",
+          "title": "ASK A WITNESS",
+          "prompt": "Ask someone trustworthy what gift they consistently see in you."
+        }
+      ]
+    },
+    {
+      "id": "day-27",
+      "source_day": 27,
+      "title": "Victory Secured in Christ",
+      "text": "Consistency can be more powerful than intensity. Stand firm, return to truth, and treat today’s obstacle as a place to practice the armor you say you carry.",
+      "carry": "Return is a form of victory.",
+      "scriptures": [
+        "1 Corinthians 15:57"
+      ],
+      "doors": [
+        {
+          "id": "put-on-the-truth",
+          "title": "PUT ON THE TRUTH",
+          "prompt": "Write one false fear and one truth that directly answers it."
+        },
+        {
+          "id": "return-to-the-practice",
+          "title": "RETURN TO THE PRACTICE",
+          "prompt": "Resume one prayer, discipline, or good habit you have dropped."
+        },
+        {
+          "id": "face-one-obstacle",
+          "title": "FACE ONE OBSTACLE",
+          "prompt": "Choose one barrier and work on it for fifteen minutes without trying to finish the whole battle."
+        }
+      ]
+    },
+    {
+      "id": "day-28",
+      "source_day": 28,
+      "title": "Guided by Eternal Light",
+      "text": "You do not need enough light for the entire road. Let Scripture, prayer, and the next honest landmark guide the portion you can actually walk today.",
+      "carry": "A lamp is enough for the next few steps.",
+      "scriptures": [
+        "Psalm 119:105"
+      ],
+      "doors": [
+        {
+          "id": "read-for-direction",
+          "title": "READ FOR DIRECTION",
+          "prompt": "Read today’s scripture slowly and write the single phrase that feels most usable."
+        },
+        {
+          "id": "walk-by-small-light",
+          "title": "WALK BY SMALL LIGHT",
+          "prompt": "Take one next step without demanding certainty about step ten."
+        },
+        {
+          "id": "be-a-lamp",
+          "title": "BE A LAMP",
+          "prompt": "Offer clear, non-controlling help to someone who is trying to find their own next step."
+        }
+      ]
+    },
+    {
+      "id": "day-29",
+      "source_day": 29,
+      "title": "Embraced by Mercy",
+      "text": "Failure does not require exile. Confession, repair, and mercy can return you to relationship without chaining you forever to the moment you fell short.",
+      "carry": "Repentance is a door back, not a sentence of permanent shame.",
+      "scriptures": [
+        "1 John 1:9"
+      ],
+      "doors": [
+        {
+          "id": "admit-without-self-cruelty",
+          "title": "ADMIT WITHOUT SELF-CRUELTY",
+          "prompt": "Name one real wrong plainly without adding insults about your entire identity."
+        },
+        {
+          "id": "make-one-repair",
+          "title": "MAKE ONE REPAIR",
+          "prompt": "Where appropriate, correct, repay, apologize, or change one behavior connected to the wrong."
+        },
+        {
+          "id": "receive-mercy",
+          "title": "RECEIVE MERCY",
+          "prompt": "After repair, resist reopening the case merely to punish yourself again."
+        }
+      ]
+    },
+    {
+      "id": "day-30",
+      "source_day": 30,
+      "title": "Anchored in Hope",
+      "text": "Hope does not deny the storm; it gives the soul something to hold while the storm is still happening. Waiting can be soil rather than empty time.",
+      "carry": "An anchor works while the water is moving.",
+      "scriptures": [
+        "Jeremiah 29:11"
+      ],
+      "doors": [
+        {
+          "id": "choose-an-anchor",
+          "title": "CHOOSE AN ANCHOR",
+          "prompt": "Pick one verse, object, person, or practice to return to when the day becomes unstable."
+        },
+        {
+          "id": "write-a-future-sentence",
+          "title": "WRITE A FUTURE SENTENCE",
+          "prompt": "Write one sentence that begins, 'There may still be a day when...'"
+        },
+        {
+          "id": "tend-the-waiting",
+          "title": "TEND THE WAITING",
+          "prompt": "Do one useful thing inside a situation you cannot yet resolve."
+        }
+      ]
+    },
+    {
+      "id": "day-31",
+      "source_day": 31,
+      "title": "Freedom in Surrender",
+      "text": "Control promises safety by asking you to grip what was never yours to command. Separate responsibility from outcome, then act faithfully inside the smaller territory that is actually yours.",
+      "carry": "Surrender can clarify the border of responsibility.",
+      "scriptures": [
+        "Proverbs 3:5-6"
+      ],
+      "doors": [
+        {
+          "id": "two-columns",
+          "title": "TWO COLUMNS",
+          "prompt": "Write 'mine to do' and 'not mine to control' and place three concerns under the right headings."
+        },
+        {
+          "id": "take-the-detour",
+          "title": "TAKE THE DETOUR",
+          "prompt": "When a reasonable plan changes today, practice adapting without treating the change as failure."
+        },
+        {
+          "id": "release-the-outcome",
+          "title": "RELEASE THE OUTCOME",
+          "prompt": "Do your part in one matter and deliberately stop trying to control another person’s response."
+        }
+      ]
+    },
+    {
+      "id": "day-32",
+      "source_day": 32,
+      "title": "The Beauty of Gratitude",
+      "text": "Wonder often arrives at a scale too small for ambition to notice. Practice seeing ordinary gifts until gratitude becomes a way of moving through the day rather than a list performed at the end.",
+      "carry": "Small beauty still counts as beauty.",
+      "scriptures": [
+        "Psalm 118:24"
+      ],
+      "doors": [
+        {
+          "id": "find-five-small-things",
+          "title": "FIND FIVE SMALL THINGS",
+          "prompt": "Notice five ordinary details that make today more livable or beautiful."
+        },
+        {
+          "id": "thank-a-person",
+          "title": "THANK A PERSON",
+          "prompt": "Send one specific thank-you that names what the person actually did."
+        },
+        {
+          "id": "keep-one-glimpse",
+          "title": "KEEP ONE GLIMPSE",
+          "prompt": "Photograph or write down one tiny scene you would otherwise forget."
+        }
+      ]
+    },
+    {
+      "id": "day-33",
+      "source_day": 33,
+      "title": "Resilient Through Rejection",
+      "text": "Rejection hurts, but it does not become a reliable measurement of your worth. Let what is closed be closed without making it the final narrator of your story.",
+      "carry": "A closed human door cannot define the whole house.",
+      "scriptures": [
+        "Psalm 34:18"
+      ],
+      "doors": [
+        {
+          "id": "return-the-verdict",
+          "title": "RETURN THE VERDICT",
+          "prompt": "Write one judgment someone made about you that you no longer agree to carry as identity."
+        },
+        {
+          "id": "choose-belonging",
+          "title": "CHOOSE BELONGING",
+          "prompt": "Move toward one person, place, practice, or community where mutual care is actually present."
+        },
+        {
+          "id": "do-the-work-anyway",
+          "title": "DO THE WORK ANYWAY",
+          "prompt": "Continue one meaningful task even without the approval you hoped to receive."
+        }
+      ]
+    },
+    {
+      "id": "day-34",
+      "source_day": 34,
+      "title": "The Blessing of Obedience",
+      "text": "Obedience can look less like restriction and more like daily bread: one instruction, one day, one act of trust at a time. Let faithfulness become concrete.",
+      "carry": "Daily bread is gathered daily.",
+      "scriptures": [],
+      "doors": [
+        {
+          "id": "do-the-simple-command",
+          "title": "DO THE SIMPLE COMMAND",
+          "prompt": "Choose one clear good you already know to do and do it before adding another plan."
+        },
+        {
+          "id": "gather-today-s-manna",
+          "title": "GATHER TODAY'S MANNA",
+          "prompt": "Identify what is sufficient for today instead of demanding tomorrow’s supply now."
+        },
+        {
+          "id": "keep-one-promise",
+          "title": "KEEP ONE PROMISE",
+          "prompt": "Honor one commitment you have made, especially a small one that is easy to dismiss."
+        }
+      ]
+    },
+    {
+      "id": "day-35",
+      "source_day": 35,
+      "title": "Trusting God’s Perfect Timing",
+      "text": "Delay can feel like contradiction when you are already trying to walk faithfully. Use the waiting season as formation instead of proof that nothing is happening.",
+      "carry": "Waiting time can still be working time.",
+      "scriptures": [
+        "Hebrews 2:11"
+      ],
+      "doors": [
+        {
+          "id": "stop-checking-once",
+          "title": "STOP CHECKING ONCE",
+          "prompt": "Choose one awaited result and skip one unnecessary refresh, message, or status check."
+        },
+        {
+          "id": "use-the-wait",
+          "title": "USE THE WAIT",
+          "prompt": "Practice, prepare, clean, learn, or strengthen something that will still matter when the answer arrives."
+        },
+        {
+          "id": "do-today-s-duty",
+          "title": "DO TODAY'S DUTY",
+          "prompt": "Complete one responsibility that is present now rather than living only inside the delayed future."
+        }
+      ]
+    },
+    {
+      "id": "day-36",
+      "source_day": 36,
+      "title": "Patience and Comfort in His Presence",
+      "text": "Comfort can be received through the ordinary world and then passed along. Slow down enough to notice what steadies you, and let that patience become something another person can feel.",
+      "carry": "Comfort received can become comfort carried.",
+      "scriptures": [
+        "Romans 15:5",
+        "John 15:13"
+      ],
+      "doors": [
+        {
+          "id": "notice-the-world",
+          "title": "NOTICE THE WORLD",
+          "prompt": "Spend five minutes attending to light, wind, sound, sky, temperature, or another ordinary sign of life."
+        },
+        {
+          "id": "comfort-someone",
+          "title": "COMFORT SOMEONE",
+          "prompt": "Offer presence, practical help, or encouragement to someone carrying a hard day."
+        },
+        {
+          "id": "slow-one-response",
+          "title": "SLOW ONE RESPONSE",
+          "prompt": "Practice patience in one place where speed would normally make you sharp."
+        }
+      ]
+    },
+    {
+      "id": "day-37",
+      "source_day": 37,
+      "title": "Keeping God First",
+      "text": "Idols do not require statues; anything can become central enough to reorder everything around itself. Look honestly at where attention, fear, money, and longing are already bowing.",
+      "carry": "What sits at the center quietly arranges the rest.",
+      "scriptures": [
+        "Exodus 20:3",
+        "Isaiah 43:4"
+      ],
+      "doors": [
+        {
+          "id": "audit-the-center",
+          "title": "AUDIT THE CENTER",
+          "prompt": "Look at yesterday’s time, spending, and attention. What appears to be first in practice?"
+        },
+        {
+          "id": "first-before-feed",
+          "title": "FIRST BEFORE FEED",
+          "prompt": "Before opening your usual feed or entertainment, give a few minutes to prayer or Scripture."
+        },
+        {
+          "id": "loosen-one-grip",
+          "title": "LOOSEN ONE GRIP",
+          "prompt": "Choose one possession, status marker, relationship demand, or desire you will hold less tightly today."
+        }
+      ]
+    },
+    {
+      "id": "day-38",
+      "source_day": 38,
+      "title": "Courage Through Seasons of Change",
+      "text": "Change can feel like loss even when it is making room for renewal. Name the season you are in, notice what it is teaching, and take one courageous step appropriate to this season rather than the last one.",
+      "carry": "A new season asks for a new way of carrying the same faith.",
+      "scriptures": [
+        "Proverbs 8:22",
+        "2 Timothy 1:7"
+      ],
+      "doors": [
+        {
+          "id": "name-the-season",
+          "title": "NAME THE SEASON",
+          "prompt": "Write one sentence describing what is ending, beginning, or changing."
+        },
+        {
+          "id": "prune-for-growth",
+          "title": "PRUNE FOR GROWTH",
+          "prompt": "Remove one thing that belonged to a former season but is crowding the present one."
+        },
+        {
+          "id": "move-with-courage",
+          "title": "MOVE WITH COURAGE",
+          "prompt": "Take one action that fits who you are becoming rather than who you were trying to remain."
+        }
+      ]
+    },
+    {
+      "id": "day-39",
+      "source_day": 39,
+      "title": "Eternal Joy Beyond Temptation",
+      "text": "Temptation often offers a bright short-term object in exchange for a deeper good. Slow the trade down long enough to compare what fades with what actually nourishes.",
+      "carry": "Not every beautiful thing deserves your yes.",
+      "scriptures": [
+        "Psalm 37:4",
+        "1 Corinthians 10:13"
+      ],
+      "doors": [
+        {
+          "id": "name-the-trade",
+          "title": "NAME THE TRADE",
+          "prompt": "Write what one temptation promises now and what it may cost later."
+        },
+        {
+          "id": "remove-the-easy-path",
+          "title": "REMOVE THE EASY PATH",
+          "prompt": "Add one small friction between you and a habit you do not want ruling you."
+        },
+        {
+          "id": "replace-don-t-just-refuse",
+          "title": "REPLACE, DON'T JUST REFUSE",
+          "prompt": "Choose a better source of joy, rest, connection, or relief for the same need."
+        }
+      ]
+    },
+    {
+      "id": "day-40",
+      "source_day": 40,
+      "title": "The Strength of Meekness",
+      "text": "Meekness is power that does not need to prove itself by retaliation. Practice staying firm without becoming cruel, and let restraint reveal strength rather than weakness.",
+      "carry": "Power under control is still power.",
+      "scriptures": [],
+      "doors": [
+        {
+          "id": "lower-the-force",
+          "title": "LOWER THE FORCE",
+          "prompt": "Use fewer words, less volume, or less pressure in one difficult exchange."
+        },
+        {
+          "id": "wait-before-retaliating",
+          "title": "WAIT BEFORE RETALIATING",
+          "prompt": "Do not answer one offense until you can choose the form of your response."
+        },
+        {
+          "id": "stand-without-striking",
+          "title": "STAND WITHOUT STRIKING",
+          "prompt": "Hold one truth or boundary clearly without adding punishment, humiliation, or revenge."
+        }
+      ]
+    },
+    {
+      "id": "day-41",
+      "source_day": 41,
+      "title": "Prepared in the Pit, Promoted in His Power",
+      "text": "The pit is not automatically meaningless. Ask what strength, skill, patience, or clarity is being formed there without pretending suffering itself is good.",
+      "carry": "Preparation can happen in places you would never choose.",
+      "scriptures": [
+        "Romans 8:18",
+        "Philippians 4:13"
+      ],
+      "doors": [
+        {
+          "id": "name-the-training",
+          "title": "NAME THE TRAINING",
+          "prompt": "Identify one capacity a difficult season has forced you to develop."
+        },
+        {
+          "id": "use-the-hard-won-skill",
+          "title": "USE THE HARD-WON SKILL",
+          "prompt": "Apply one thing you learned through hardship to help yourself or someone else today."
+        },
+        {
+          "id": "listen-in-the-storm",
+          "title": "LISTEN IN THE STORM",
+          "prompt": "Spend a few minutes with the difficult reality without immediately escaping, fixing, or narrating it."
+        }
+      ]
+    },
+    {
+      "id": "day-42",
+      "source_day": 42,
+      "title": "Strength and Peace in the Storm",
+      "text": "The final day does not promise a life without storms. It closes by returning to the same claim beneath the whole journey: God remains present, strength can be received, and peace can be practiced inside instability.",
+      "carry": "Completion is not escape; it is a way of carrying what survived.",
+      "scriptures": [
+        "Colossians 1:13",
+        "Joshua 1:9"
+      ],
+      "doors": [
+        {
+          "id": "make-a-shelter-ritual",
+          "title": "MAKE A SHELTER RITUAL",
+          "prompt": "Choose one simple practice you can repeat when life becomes chaotic: prayer, breath, walk, verse, call, or quiet."
+        },
+        {
+          "id": "carry-one-line",
+          "title": "CARRY ONE LINE",
+          "prompt": "Choose one sentence from these 42 days to keep in your phone, wallet, wall, or memory."
+        },
+        {
+          "id": "close-with-a-witness",
+          "title": "CLOSE WITH A WITNESS",
+          "prompt": "Write what changed, what did not, and what you want to carry into the next season."
+        }
+      ]
+    }
+  ]
+}
