@@ -1,0 +1,91 @@
+{
+  "schema": "dvote.campaign.v1",
+  "id": "field-notes-001",
+  "title": "Field Notes 001",
+  "subtitle": "Seven small doors into ordinary life",
+  "author": "The Static Collective",
+  "version": "1.0.0",
+  "progression": {
+    "mode": "daily",
+    "after": "cycle"
+  },
+  "encounters": [
+    {
+      "id": "door-that-didnt-open",
+      "title": "The Door That Didn't Open",
+      "text": "Something refuses to happen today. Do not rush to name the refusal. A closed door is first a fact; meaning can wait.",
+      "carry": "What appears empty may merely be unoccupied.",
+      "doors": [
+        { "id": "pass-differently", "title": "PASS DIFFERENTLY", "prompt": "Take a route you normally ignore. Notice one thing you would not have seen otherwise." },
+        { "id": "ask-once", "title": "ASK ONCE", "prompt": "Ask one honest question you have been postponing. Do not force an answer." },
+        { "id": "leave-space", "title": "LEAVE SPACE", "prompt": "Cancel one unnecessary act of filling. Keep ten minutes deliberately unoccupied." }
+      ]
+    },
+    {
+      "id": "small-thing-followed-you",
+      "title": "A Small Thing Has Followed You",
+      "text": "Look for the ordinary object, phrase, sound, or color that has appeared more than once lately. Repetition is not proof. It is permission to notice.",
+      "carry": "Attention can hold a thing without explaining it.",
+      "doors": [
+        { "id": "photograph-it", "title": "PHOTOGRAPH IT", "prompt": "Record one recurring ordinary thing exactly as it appears." },
+        { "id": "name-the-echo", "title": "NAME THE ECHO", "prompt": "Write down the repeated word, object, color, or sound. Nothing more." },
+        { "id": "give-it-away", "title": "GIVE IT AWAY", "prompt": "Tell someone else one small thing you noticed today and let their response remain theirs." }
+      ]
+    },
+    {
+      "id": "map-has-a-blank-place",
+      "title": "The Map Has a Blank Place",
+      "text": "There is somewhere nearby you have never entered, even though your life repeatedly passes its edge. Today the edge is enough to begin.",
+      "carry": "Unknown does not mean distant.",
+      "doors": [
+        { "id": "cross-a-threshold", "title": "CROSS A THRESHOLD", "prompt": "Enter one public place you normally pass by. Stay long enough to notice its texture." },
+        { "id": "walk-to-the-edge", "title": "WALK TO THE EDGE", "prompt": "Go to the boundary of a familiar route and look past it." },
+        { "id": "ask-for-a-name", "title": "ASK FOR A NAME", "prompt": "Learn the name of one place, plant, street, object, or person you usually leave unnamed." }
+      ]
+    },
+    {
+      "id": "borrowed-weather",
+      "title": "Borrowed Weather",
+      "text": "Not every mood in a room began inside you. Notice what you are carrying, and what may have arrived from somewhere else.",
+      "carry": "You may witness weather without becoming weather.",
+      "doors": [
+        { "id": "step-outside", "title": "STEP OUTSIDE", "prompt": "Change rooms or go outdoors for five minutes before deciding what you feel." },
+        { "id": "return-a-burden", "title": "RETURN A BURDEN", "prompt": "Write one responsibility that is actually yours and one that is not." },
+        { "id": "bring-calm", "title": "BRING CALM", "prompt": "Do one small thing that lowers friction for another person without announcing it." }
+      ]
+    },
+    {
+      "id": "inventory-of-enough",
+      "title": "Inventory of Enough",
+      "text": "Before seeking another tool, answer, purchase, or permission, examine what is already within reach.",
+      "carry": "Provision often enters the story before the need has a name.",
+      "doors": [
+        { "id": "empty-your-pockets", "title": "EMPTY YOUR POCKETS", "prompt": "Make a literal inventory of what you are carrying right now." },
+        { "id": "use-the-old-tool", "title": "USE THE OLD TOOL", "prompt": "Finish one small task using something you already own." },
+        { "id": "share-surplus", "title": "SHARE SURPLUS", "prompt": "Give, lend, or offer one useful thing that is sitting idle." }
+      ]
+    },
+    {
+      "id": "unfinished-conversation",
+      "title": "The Unfinished Conversation",
+      "text": "Some conversations remain alive because they were interrupted rather than completed. You do not have to resolve one today. You can simply locate it.",
+      "carry": "Unfinished is a condition, not a verdict.",
+      "doors": [
+        { "id": "write-the-next-line", "title": "WRITE THE NEXT LINE", "prompt": "Privately write the next honest sentence in an unfinished conversation." },
+        { "id": "send-a-gentle-ping", "title": "SEND A GENTLE PING", "prompt": "Where appropriate and safe, send a simple message that asks for nothing except contact." },
+        { "id": "let-it-rest", "title": "LET IT REST", "prompt": "Choose not to reopen one conversation today. Record why rest is the better crossing." }
+      ]
+    },
+    {
+      "id": "week-leaves-a-trace",
+      "title": "The Week Leaves a Trace",
+      "text": "Before beginning something new, look backward without trying to make a lesson. What remains after the week is evidence of where attention actually went.",
+      "carry": "A trace is smaller than a theory and often more useful.",
+      "doors": [
+        { "id": "read-your-receipts", "title": "READ YOUR RECEIPTS", "prompt": "Review the notes you kept this week. Circle one repeated word." },
+        { "id": "keep-one-object", "title": "KEEP ONE OBJECT", "prompt": "Choose one physical or digital object from the week and preserve it deliberately." },
+        { "id": "close-one-loop", "title": "CLOSE ONE LOOP", "prompt": "Finish one task that has remained open for at least three days." }
+      ]
+    }
+  ]
+}
