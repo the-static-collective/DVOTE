@@ -4,16 +4,33 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#17140f" />
-  <meta name="description" content="DVOTE — a phone-first daily devotion and life game." />
+  <meta name="description" content="DVOTE — a phone-first living book." />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
   <title>DVOTE</title>
 </head>
 <body>
+  <section id="threshold" class="threshold hidden" aria-labelledby="threshold-title">
+    <div class="threshold-inner">
+      <div class="threshold-mark" id="threshold-mark">DVOTE</div>
+      <div class="cover-card">
+        <div class="cover-eyebrow">A LIVING BOOK</div>
+        <div class="cover-sigil" id="cover-sigil">42</div>
+        <h1 id="threshold-title"></h1>
+        <p class="cover-subtitle" id="threshold-subtitle"></p>
+        <p class="cover-author" id="threshold-author"></p>
+        <div class="threshold-rule"></div>
+        <p class="threshold-promise">Day 1 begins when you cross.</p>
+        <button id="enter-campaign" class="primary threshold-enter">ENTER</button>
+        <button id="threshold-library" class="text-button">choose another book</button>
+      </div>
+    </div>
+  </section>
+
   <main class="app-shell">
     <header class="topbar">
-      <button class="wordmark" data-view="today" aria-label="Go to today">DVOTE</button>
+      <button class="wordmark" data-view="library" aria-label="Open campaign shelf">DVOTE</button>
       <div class="daymark" id="daymark">DAY 001</div>
     </header>
 
@@ -68,14 +85,28 @@
         <div class="tiny-label">RECEIPT</div>
         <h2>Held.</h2>
         <p>The game records what happened. It does not decide what it meant.</p>
-        <button id="close-day" class="secondary">CLOSE FOR NOW</button>
+        <button id="view-receipts" class="secondary">SEE THE CARD</button>
+        <button id="close-day" class="text-button">close for now</button>
       </section>
     </section>
 
-    <section id="inventory" class="view">
+    <section id="library" class="view">
+      <div class="kicker">CAMPAIGN SHELF</div>
+      <h1>Living Books</h1>
+      <p class="muted">Each book proposes doors. Your life supplies the crossing.</p>
+      <div id="campaign-shelf" class="campaign-shelf"></div>
+      <div class="shelf-law">Campaign owns the book. Runtime owns the life.</div>
+    </section>
+
+    <section id="receipts" class="view">
+      <div class="kicker">FIELD ARCHIVE</div>
+      <h1>Receipts</h1>
+      <p class="muted">What happened, preserved without deciding what it meant.</p>
+      <div id="receipt-list" class="receipt-stack"></div>
+
+      <div class="section-break"></div>
       <div class="kicker">WHAT SURVIVED</div>
-      <h1>Inventory</h1>
-      <p class="muted">Objects, phrases, songs, and fragments you chose to carry forward.</p>
+      <h2>Inventory</h2>
       <div id="inventory-list" class="stack"></div>
     </section>
 
@@ -88,7 +119,8 @@
 
     <nav class="bottom-nav" aria-label="Primary navigation">
       <button class="nav-button active" data-view="today"><span>◌</span>Today</button>
-      <button class="nav-button" data-view="inventory"><span>◇</span>Inventory</button>
+      <button class="nav-button" data-view="library"><span>▤</span>Library</button>
+      <button class="nav-button" data-view="receipts"><span>◇</span>Receipts</button>
       <button class="nav-button" data-view="remember"><span>∴</span>Remember</button>
     </nav>
   </main>

@@ -1,7 +1,7 @@
 {
-  "name": "DVOTE — LifeGame",
+  "name": "DVOTE — Living Books",
   "short_name": "DVOTE",
-  "description": "A phone-first daily devotion and life game.",
+  "description": "Phone-first living books: read, cross into life, witness what happened, and carry forward what survived.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

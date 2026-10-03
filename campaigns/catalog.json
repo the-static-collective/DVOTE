@@ -1,0 +1,47 @@
+{
+  "schema": "dvote.catalog.v1",
+  "campaigns": [
+    {
+      "id": "paula-42-hope-restoration",
+      "title": "42-Day Devotional Guide",
+      "subtitle": "A Journey of Hope and Restoration",
+      "author": "Paula King",
+      "status": "playable",
+      "length": 42,
+      "mark": "42"
+    },
+    {
+      "id": "field-notes-001",
+      "title": "Field Notes 001",
+      "subtitle": "Seven small doors into ordinary life",
+      "author": "The Static Collective",
+      "status": "playable",
+      "length": 7,
+      "mark": "◌"
+    },
+    {
+      "id": "revival",
+      "title": "REVIVAL",
+      "subtitle": "A Bible-discovery campaign",
+      "author": "The Static Collective",
+      "status": "nearby",
+      "mark": "✦"
+    },
+    {
+      "id": "national-treasure",
+      "title": "National Treasure",
+      "subtitle": "An exploration campaign",
+      "author": "The Static Collective",
+      "status": "nearby",
+      "mark": "⌖"
+    },
+    {
+      "id": "golden-promise",
+      "title": "The Golden Promise",
+      "subtitle": "A magical-realism story campaign",
+      "author": "Paula King + The Static Collective",
+      "status": "nearby",
+      "mark": "∞"
+    }
+  ]
+}

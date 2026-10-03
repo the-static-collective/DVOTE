@@ -1,9 +1,10 @@
 let campaign;
+let catalog = { campaigns: [] };
 let encounter;
 let dayNumber = 1;
 let selectedDoor = null;
 
-const $ = (id) => document.getElementById(id);
+const $ = id => document.getElementById(id);
 
 function campaignSlug() {
   const requested = new URLSearchParams(location.search).get("campaign") || "paula-42-hope-restoration";
@@ -12,8 +13,8 @@ function campaignSlug() {
 
 async function loadCampaign() {
   const slug = campaignSlug();
-  const response = await fetch(`campaigns/${slug}/campaign.json`);
-  if (!response.ok) throw new Error(`Campaign not found: ${slug}`);
+  const response = await fetch("campaigns/" + slug + "/campaign.json");
+  if (!response.ok) throw new Error("Campaign not found: " + slug);
   const data = await response.json();
 
   if (
@@ -28,8 +29,19 @@ async function loadCampaign() {
   return data;
 }
 
+async function loadCatalog() {
+  try {
+    const response = await fetch("campaigns/catalog.json");
+    if (!response.ok) return { campaigns: [] };
+    const data = await response.json();
+    return Array.isArray(data.campaigns) ? data : { campaigns: [] };
+  } catch {
+    return { campaigns: [] };
+  }
+}
+
 function key(name) {
-  return `dvote.${campaign.id}.${name}`;
+  return "dvote." + campaign.id + "." + name;
 }
 
 const store = {
@@ -39,18 +51,20 @@ const store = {
   set receipts(value) {
     localStorage.setItem(key("receipts"), JSON.stringify(value));
   },
-  get startedAt() {
-    const existing = localStorage.getItem(key("startedAt"));
-    if (existing) return existing;
-    const value = new Date().toISOString();
-    localStorage.setItem(key("startedAt"), value);
-    return value;
+  get enteredAt() {
+    return localStorage.getItem(key("enteredAt")) || localStorage.getItem(key("startedAt")) || "";
+  },
+  enter() {
+    if (!this.enteredAt) {
+      localStorage.setItem(key("enteredAt"), new Date().toISOString());
+    }
+    return this.enteredAt;
   },
   getWeather(day) {
-    return localStorage.getItem(key(`weather.${day}`)) || "";
+    return localStorage.getItem(key("weather." + day)) || "";
   },
   setWeather(day, value) {
-    localStorage.setItem(key(`weather.${day}`), value);
+    localStorage.setItem(key("weather." + day), value);
   }
 };
 
@@ -59,7 +73,8 @@ function localDayStamp(date) {
 }
 
 function campaignDay() {
-  const start = new Date(store.startedAt);
+  if (!store.enteredAt) return 1;
+  const start = new Date(store.enteredAt);
   const now = new Date();
   return Math.max(1, Math.floor(localDayStamp(now) - localDayStamp(start)) + 1);
 }
@@ -72,8 +87,27 @@ function encounterForDay(day) {
   return campaign.encounters[Math.min(day - 1, campaign.encounters.length - 1)];
 }
 
+function currentCatalogEntry() {
+  return catalog.campaigns.find(item => item.id === campaign.id) || {};
+}
+
+function renderThreshold() {
+  const meta = currentCatalogEntry();
+  $("threshold-title").textContent = campaign.title;
+  $("threshold-subtitle").textContent = campaign.subtitle || meta.subtitle || "";
+  $("threshold-author").textContent = campaign.author ? "by " + campaign.author : "";
+  $("cover-sigil").textContent = meta.mark || String(campaign.encounters.length);
+  $("threshold").classList.remove("hidden");
+  document.body.classList.add("threshold-open");
+}
+
+function hideThreshold() {
+  $("threshold").classList.add("hidden");
+  document.body.classList.remove("threshold-open");
+}
+
 function renderEncounter() {
-  $("daymark").textContent = `DAY ${String(dayNumber).padStart(3, "0")}`;
+  $("daymark").textContent = "DAY " + String(dayNumber).padStart(3, "0");
   $("campaign-label").textContent = [campaign.title, campaign.author].filter(Boolean).join(" · ");
   $("encounter-title").textContent = encounter.title;
   $("encounter-text").textContent = encounter.text;
@@ -82,7 +116,7 @@ function renderEncounter() {
   const scriptures = Array.isArray(encounter.scriptures) ? encounter.scriptures : [];
   $("scripture-block").classList.toggle("hidden", scriptures.length === 0);
   $("scripture-list").innerHTML = scriptures
-    .map(ref => `<span class="scripture-ref">${escapeHtml(ref)}</span>`)
+    .map(ref => '<span class="scripture-ref">' + escapeHtml(ref) + "</span>")
     .join("");
 
   const todayWeather = store.getWeather(dayNumber);
@@ -98,16 +132,20 @@ function renderDoors() {
   encounter.doors.forEach((door, index) => {
     const button = document.createElement("button");
     button.className = "door";
-    button.innerHTML = `
-      <span class="door-index">${String(index + 1).padStart(2, "0")}</span>
-      <span><strong>${escapeHtml(door.title)}</strong><span>${escapeHtml(door.prompt)}</span></span>
-    `;
+    button.innerHTML =
+      '<span class="door-index">' + String(index + 1).padStart(2, "0") + "</span>" +
+      "<span><strong>" + escapeHtml(door.title) + "</strong><span>" + escapeHtml(door.prompt) + "</span></span>";
     button.addEventListener("click", () => chooseDoor(index));
     $("door-list").appendChild(button);
   });
 }
 
 function chooseDoor(index) {
+  if (!store.enteredAt) {
+    renderThreshold();
+    return;
+  }
+
   selectedDoor = index;
   const door = encounter.doors[index];
   $("crossing-title").textContent = door.title;
@@ -118,11 +156,107 @@ function chooseDoor(index) {
   $("crossing").scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
+function switchCampaign(id) {
+  const url = new URL(location.href);
+  url.searchParams.set("campaign", id);
+  location.href = url.toString();
+}
+
+function renderLibrary() {
+  if (!catalog.campaigns.length) {
+    $("campaign-shelf").innerHTML = '<p class="muted">The shelf is unavailable offline until it has been opened once.</p>';
+    return;
+  }
+
+  $("campaign-shelf").innerHTML = catalog.campaigns.map(item => {
+    const playable = item.status === "playable";
+    const current = item.id === campaign.id;
+    const state = current && store.enteredAt ? "CURRENT" : current ? "AT THRESHOLD" : playable ? "PLAYABLE" : "NEARBY DOOR";
+    const action = playable
+      ? '<button class="shelf-action" data-campaign="' + escapeHtml(item.id) + '">' + (current ? "OPEN" : "ENTER BOOK") + "</button>"
+      : '<div class="shelf-action disabled">NOT YET OPEN</div>';
+
+    return (
+      '<article class="shelf-book ' + (current ? "current" : "") + " " + (!playable ? "nearby" : "") + '">' +
+        '<div class="shelf-mark">' + escapeHtml(item.mark || "◌") + "</div>" +
+        '<div class="shelf-state">' + escapeHtml(state) + "</div>" +
+        "<h2>" + escapeHtml(item.title) + "</h2>" +
+        '<p class="shelf-subtitle">' + escapeHtml(item.subtitle || "") + "</p>" +
+        '<p class="shelf-author">' + escapeHtml(item.author || "") + "</p>" +
+        (item.length ? '<div class="shelf-length">' + item.length + " encounters</div>" : "") +
+        action +
+      "</article>"
+    );
+  }).join("");
+
+  document.querySelectorAll("[data-campaign]").forEach(button => {
+    button.addEventListener("click", () => {
+      if (button.dataset.campaign === campaign.id) {
+        if (!store.enteredAt) renderThreshold();
+        else showView("today");
+      } else {
+        switchCampaign(button.dataset.campaign);
+      }
+    });
+  });
+}
+
 function renderInventory() {
   const items = store.receipts.filter(r => r.object).slice().reverse();
   $("inventory-list").innerHTML = items.length
-    ? items.map(item => `<div class="inventory-item">${escapeHtml(item.object)}<small>Day ${String(item.day).padStart(3, "0")} · ${escapeHtml(item.encounter)}</small></div>`).join("")
+    ? items.map(item =>
+        '<div class="inventory-item">' + escapeHtml(item.object) +
+        "<small>Day " + String(item.day).padStart(3, "0") + " · " + escapeHtml(item.encounter) + "</small></div>"
+      ).join("")
     : '<p class="muted">Nothing has been deliberately carried forward yet.</p>';
+}
+
+function formatReceiptDate(value) {
+  const date = new Date(value);
+  return Number.isNaN(date.getTime())
+    ? ""
+    : date.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
+}
+
+function renderReceipts() {
+  const receipts = store.receipts.slice().reverse();
+
+  if (!receipts.length) {
+    $("receipt-list").innerHTML =
+      '<div class="empty-receipt"><div class="tiny-label">NO RECEIPTS YET</div><p>Cross a door, come back, and witness what happened.</p></div>';
+    renderInventory();
+    return;
+  }
+
+  $("receipt-list").innerHTML = receipts.map((item, reverseIndex) => {
+    const serial = store.receipts.length - reverseIndex;
+    const note = item.note
+      ? '<p class="receipt-note">' + escapeHtml(item.note) + "</p>"
+      : '<p class="receipt-note muted">No note. The crossing itself was kept.</p>';
+    const object = item.object
+      ? '<div class="receipt-object"><span>CARRIED</span>' + escapeHtml(item.object) + "</div>"
+      : "";
+
+    return (
+      '<article class="field-receipt">' +
+        '<div class="receipt-head">' +
+          '<div class="receipt-brand">DVOTE / RECEIPT</div>' +
+          '<div class="receipt-serial">R-' + String(serial).padStart(3, "0") + "</div>" +
+        "</div>" +
+        '<div class="receipt-day">DAY ' + String(item.day || 1).padStart(3, "0") + "</div>" +
+        '<h2>' + escapeHtml(item.encounter || "Encounter") + "</h2>" +
+        '<div class="receipt-crossed"><span>CROSSED</span>' + escapeHtml(item.door || "Door") + "</div>" +
+        note +
+        object +
+        '<div class="receipt-foot">' +
+          "<span>" + escapeHtml(item.weather || "weather unmarked") + "</span>" +
+          "<span>" + escapeHtml(formatReceiptDate(item.date)) + "</span>" +
+        "</div>" +
+      "</article>"
+    );
+  }).join("");
+
+  renderInventory();
 }
 
 const stopWords = new Set(
@@ -132,11 +266,12 @@ const stopWords = new Set(
 function topEchoes(receipts) {
   const words = {};
   receipts.forEach(r => {
-    const text = `${r.note || ""} ${r.object || ""}`.toLowerCase();
+    const text = ((r.note || "") + " " + (r.object || "")).toLowerCase();
     (text.match(/[a-z']{3,}/g) || []).forEach(word => {
       if (!stopWords.has(word)) words[word] = (words[word] || 0) + 1;
     });
   });
+
   return Object.entries(words)
     .filter(([, count]) => count > 1)
     .sort((a, b) => b[1] - a[1])
@@ -156,15 +291,25 @@ function renderRemember() {
   const doors = [...new Set(recent.map(r => r.door))];
   const objects = recent.filter(r => r.object).map(r => r.object);
 
-  let html = `<div class="echo"><strong>${recent.length}</strong> receipt${recent.length === 1 ? "" : "s"} held this week.</div>`;
-  html += `<div class="echo"><strong>Doors crossed:</strong><br>${doors.map(escapeHtml).join(" · ")}</div>`;
+  let html =
+    '<div class="echo"><strong>' + recent.length + "</strong> receipt" +
+    (recent.length === 1 ? "" : "s") + " held this week.</div>";
+
+  html +=
+    '<div class="echo"><strong>Doors crossed:</strong><br>' +
+    doors.map(escapeHtml).join(" · ") + "</div>";
 
   if (objects.length) {
-    html += `<div class="echo"><strong>Carried forward:</strong><br>${objects.map(escapeHtml).join(" · ")}</div>`;
+    html +=
+      '<div class="echo"><strong>Carried forward:</strong><br>' +
+      objects.map(escapeHtml).join(" · ") + "</div>";
   }
 
   if (echoes.length) {
-    html += `<div class="echo"><strong>Words that repeated:</strong><br>${echoes.map(([word, count]) => `${escapeHtml(word)} ×${count}`).join(" · ")}</div>`;
+    html +=
+      '<div class="echo"><strong>Words that repeated:</strong><br>' +
+      echoes.map(([word, count]) => escapeHtml(word) + " ×" + count).join(" · ") +
+      "</div>";
   } else {
     html += '<div class="echo">Nothing repeats strongly enough yet. That is also a valid trace.</div>';
   }
@@ -174,7 +319,7 @@ function renderRemember() {
 }
 
 function escapeHtml(value) {
-  return String(value).replace(/[&<>"']/g, char => ({
+  return String(value ?? "").replace(/[&<>"']/g, char => ({
     "&": "&amp;",
     "<": "&lt;",
     ">": "&gt;",
@@ -184,14 +329,41 @@ function escapeHtml(value) {
 }
 
 function showView(name) {
-  document.querySelectorAll(".view").forEach(view => view.classList.toggle("active", view.id === name));
-  document.querySelectorAll("[data-view]").forEach(button => button.classList.toggle("active", button.dataset.view === name));
-  if (name === "inventory") renderInventory();
+  if (name === "today" && !store.enteredAt) {
+    renderThreshold();
+    return;
+  }
+
+  document.querySelectorAll(".view").forEach(view => {
+    view.classList.toggle("active", view.id === name);
+  });
+
+  document.querySelectorAll("[data-view]").forEach(button => {
+    button.classList.toggle("active", button.dataset.view === name);
+  });
+
+  if (name === "library") renderLibrary();
+  if (name === "receipts") renderReceipts();
   if (name === "remember") renderRemember();
+
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function bindUI() {
+  $("enter-campaign").addEventListener("click", () => {
+    store.enter();
+    dayNumber = campaignDay();
+    encounter = encounterForDay(dayNumber);
+    renderEncounter();
+    hideThreshold();
+    showView("today");
+  });
+
+  $("threshold-library").addEventListener("click", () => {
+    hideThreshold();
+    showView("library");
+  });
+
   $("return-button").addEventListener("click", () => {
     $("witness").classList.remove("hidden");
     $("witness").scrollIntoView({ behavior: "smooth", block: "start" });
@@ -200,8 +372,15 @@ function bindUI() {
 
   document.querySelectorAll("[data-weather]").forEach(button => {
     button.addEventListener("click", () => {
+      if (!store.enteredAt) {
+        renderThreshold();
+        return;
+      }
+
       store.setWeather(dayNumber, button.dataset.weather);
-      document.querySelectorAll("[data-weather]").forEach(b => b.classList.toggle("selected", b === button));
+      document.querySelectorAll("[data-weather]").forEach(b => {
+        b.classList.toggle("selected", b === button);
+      });
     });
   });
 
@@ -232,8 +411,13 @@ function bindUI() {
     $("witness").classList.add("hidden");
     $("receipt").classList.remove("hidden");
     $("receipt").scrollIntoView({ behavior: "smooth", block: "center" });
-    renderInventory();
+    renderReceipts();
     renderRemember();
+  });
+
+  $("view-receipts").addEventListener("click", () => {
+    $("receipt").classList.add("hidden");
+    showView("receipts");
   });
 
   $("close-day").addEventListener("click", () => {
@@ -253,14 +437,18 @@ function bindUI() {
 
 async function init() {
   try {
-    campaign = await loadCampaign();
+    [campaign, catalog] = await Promise.all([loadCampaign(), loadCatalog()]);
     dayNumber = campaignDay();
     encounter = encounterForDay(dayNumber);
-    document.title = `${campaign.title} · DVOTE`;
+    document.title = campaign.title + " · DVOTE";
+
     bindUI();
     renderEncounter();
-    renderInventory();
+    renderLibrary();
+    renderReceipts();
     renderRemember();
+
+    if (!store.enteredAt) renderThreshold();
   } catch (error) {
     $("encounter-title").textContent = "The campaign could not open";
     $("encounter-text").textContent = error.message;
