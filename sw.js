@@ -1,4 +1,4 @@
-const CACHE = "dvote-paula-42-001";
+const CACHE = "dvote-artifact-layer-001";
 const SHELL = [
   "./",
   "index.html",
@@ -6,6 +6,7 @@ const SHELL = [
   "app.js",
   "manifest.webmanifest",
   "icon.svg",
+  "campaigns/catalog.json",
   "campaigns/field-notes-001/campaign.json",
   "campaigns/paula-42-hope-restoration/campaign.json"
 ];
