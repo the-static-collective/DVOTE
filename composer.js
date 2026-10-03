@@ -178,7 +178,8 @@
     card.id="composer-card";
     card.className="composer-card";
     milestones.after(card);
-    render();
+    card.innerHTML='<div class="tiny-label">COMPOSER 001</div><p class="composer-empty">Composer wakes when MEMENTO opens.</p>';
+    if(typeof campaign!=="undefined"&&campaign)render();
 
     const open=$("open-memento");
     if(open)open.addEventListener("click",()=>setTimeout(render,0));
