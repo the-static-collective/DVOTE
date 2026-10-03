@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#17140f" />
+  <meta name="description" content="DVOTE — a phone-first daily devotion and life game." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>DVOTE</title>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <button class="wordmark" data-view="today" aria-label="Go to today">DVOTE</button>
+      <div class="daymark" id="daymark">DAY 001</div>
+    </header>
+
+    <section id="today" class="view active" aria-labelledby="encounter-title">
+      <div class="kicker">TODAY'S ENCOUNTER</div>
+      <h1 id="encounter-title"></h1>
+      <p class="encounter-text" id="encounter-text"></p>
+
+      <div class="carry-card">
+        <div class="tiny-label">CARRY</div>
+        <p id="carry-text"></p>
+      </div>
+
+      <div class="weather-block">
+        <div class="tiny-label">WEATHER</div>
+        <div class="chips" id="weather-chips" role="group" aria-label="Choose today's weather">
+          <button class="chip" data-weather="clear">clear</button>
+          <button class="chip" data-weather="changing">changing</button>
+          <button class="chip" data-weather="heavy">heavy</button>
+          <button class="chip" data-weather="electric">electric</button>
+        </div>
+      </div>
+
+      <div class="doors">
+        <div class="tiny-label">DOORS</div>
+        <div id="door-list"></div>
+      </div>
+
+      <section id="crossing" class="crossing hidden" aria-live="polite">
+        <div class="tiny-label">CROSSING</div>
+        <h2 id="crossing-title"></h2>
+        <p id="crossing-text"></p>
+        <button id="return-button" class="primary">I CAME BACK</button>
+      </section>
+
+      <section id="witness" class="witness hidden" aria-live="polite">
+        <div class="tiny-label">WITNESS</div>
+        <h2>What happened?</h2>
+        <textarea id="witness-note" rows="6" placeholder="A sentence is enough. So is a strange detail."></textarea>
+        <label class="field-label" for="object-input">Anything worth carrying forward?</label>
+        <input id="object-input" type="text" maxlength="80" placeholder="red chair, receipt, phrase, song..." />
+        <button id="save-witness" class="primary">KEEP THE RECEIPT</button>
+      </section>
+
+      <section id="receipt" class="receipt hidden" aria-live="polite">
+        <div class="tiny-label">RECEIPT</div>
+        <h2>Held.</h2>
+        <p>The game records what happened. It does not decide what it meant.</p>
+        <button id="close-day" class="secondary">CLOSE FOR NOW</button>
+      </section>
+    </section>
+
+    <section id="inventory" class="view">
+      <div class="kicker">WHAT SURVIVED</div>
+      <h1>Inventory</h1>
+      <p class="muted">Objects, phrases, songs, and fragments you chose to carry forward.</p>
+      <div id="inventory-list" class="stack"></div>
+    </section>
+
+    <section id="remember" class="view">
+      <div class="kicker">COMPOSITION</div>
+      <h1>The Week Remembers</h1>
+      <p class="muted">A small composition from your last seven receipts. Repetition is shown, not interpreted.</p>
+      <div id="remember-card" class="remember-card"></div>
+    </section>
+
+    <nav class="bottom-nav" aria-label="Primary navigation">
+      <button class="nav-button active" data-view="today"><span>◌</span>Today</button>
+      <button class="nav-button" data-view="inventory"><span>◇</span>Inventory</button>
+      <button class="nav-button" data-view="remember"><span>∴</span>Remember</button>
+    </nav>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
