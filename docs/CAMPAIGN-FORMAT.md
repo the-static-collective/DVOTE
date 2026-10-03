@@ -87,3 +87,32 @@ Default: `field-notes-001`.
 ## Paula 42
 
 The 42-day devotional is the natural first full-length campaign. Its source remains a book; conversion should preserve each day's devotional voice and scripture while composing bounded phone encounters and real-world doors rather than mechanically chopping pages into screens.
+
+
+## Portable witness receipts
+
+DVOTE witness receipts now declare:
+
+```json
+{
+  "schema": "dvote.witness-receipt.v1",
+  "campaignId": "make-ground-001",
+  "encounterId": "better-hole-001",
+  "doorId": "take",
+  "disposition": "take",
+  "note": "what the reader reports happened"
+}
+```
+
+A door may optionally declare `disposition` as `take`, `hold`, or `pass`.
+The runtime preserves that declaration in the receipt; it does not infer disposition from note text.
+
+The receipt surface can export the most recent receipt as JSON so another local system can inspect or cross it without sharing the rest of the reader's local DVOTE state.
+
+Laws:
+
+- `DOOR != DISPOSITION`
+- `DISPOSITION != EXECUTION AUTHORITY`
+- `RECEIPT != INTERPRETATION`
+- `EXPORT != ADMISSION`
+
