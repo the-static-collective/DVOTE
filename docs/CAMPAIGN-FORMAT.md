@@ -87,3 +87,31 @@ Default: `field-notes-001`.
 ## Paula 42
 
 The 42-day devotional is the natural first full-length campaign. Its source remains a book; conversion should preserve each day's devotional voice and scripture while composing bounded phone encounters and real-world doors rather than mechanically chopping pages into screens.
+
+
+### Optional encounter fields
+
+`scriptures`
+
+An array of scripture references associated with the authored encounter.
+
+```json
+{
+  "scriptures": ["Psalm 119:105", "John 1:5"]
+}
+```
+
+The runtime displays references only; campaigns remain responsible for any quoted translation text they choose to include.
+
+`source_day`
+
+A stable source-day number when a campaign adapts an existing day-by-day book. This preserves provenance without making the runtime depend on the source layout.
+
+## Included campaigns
+
+- `paula-42-hope-restoration` - Paula King's 42-Day Devotional Guide: A Journey of Hope and Restoration. Default campaign.
+- `field-notes-001` - the seven-encounter DVOTE genesis field test.
+
+Field Notes can still be opened explicitly with:
+
+`?campaign=field-notes-001`

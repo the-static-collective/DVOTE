@@ -6,8 +6,8 @@ let selectedDoor = null;
 const $ = (id) => document.getElementById(id);
 
 function campaignSlug() {
-  const requested = new URLSearchParams(location.search).get("campaign") || "field-notes-001";
-  return /^[a-z0-9-]+$/.test(requested) ? requested : "field-notes-001";
+  const requested = new URLSearchParams(location.search).get("campaign") || "paula-42-hope-restoration";
+  return /^[a-z0-9-]+$/.test(requested) ? requested : "paula-42-hope-restoration";
 }
 
 async function loadCampaign() {
@@ -74,9 +74,16 @@ function encounterForDay(day) {
 
 function renderEncounter() {
   $("daymark").textContent = `DAY ${String(dayNumber).padStart(3, "0")}`;
+  $("campaign-label").textContent = [campaign.title, campaign.author].filter(Boolean).join(" · ");
   $("encounter-title").textContent = encounter.title;
   $("encounter-text").textContent = encounter.text;
   $("carry-text").textContent = encounter.carry || "";
+
+  const scriptures = Array.isArray(encounter.scriptures) ? encounter.scriptures : [];
+  $("scripture-block").classList.toggle("hidden", scriptures.length === 0);
+  $("scripture-list").innerHTML = scriptures
+    .map(ref => `<span class="scripture-ref">${escapeHtml(ref)}</span>`)
+    .join("");
 
   const todayWeather = store.getWeather(dayNumber);
   document.querySelectorAll("[data-weather]").forEach(button => {
