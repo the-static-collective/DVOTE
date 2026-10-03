@@ -1,4 +1,4 @@
-const CACHE = "dvote-campaign-format-001";
+const CACHE = "dvote-paula-42-001";
 const SHELL = [
   "./",
   "index.html",
@@ -6,7 +6,8 @@ const SHELL = [
   "app.js",
   "manifest.webmanifest",
   "icon.svg",
-  "campaigns/field-notes-001/campaign.json"
+  "campaigns/field-notes-001/campaign.json",
+  "campaigns/paula-42-hope-restoration/campaign.json"
 ];
 
 self.addEventListener("install", event => {
