@@ -2,6 +2,7 @@ let campaign;
 let encounter;
 let dayNumber = 1;
 let selectedDoor = null;
+let lastReceipt = null;
 
 const $ = (id) => document.getElementById(id);
 
@@ -206,7 +207,8 @@ function bindUI() {
     const object = $("object-input").value.trim();
     const receipts = store.receipts;
 
-    receipts.push({
+    const receipt = {
+      schema: "dvote.witness-receipt.v1",
       id: crypto.randomUUID ? crypto.randomUUID() : String(Date.now()),
       date: new Date().toISOString(),
       campaignId: campaign.id,
@@ -216,17 +218,37 @@ function bindUI() {
       encounter: encounter.title,
       doorId: door.id || null,
       door: door.title,
+      disposition: door.disposition || null,
       weather: store.getWeather(dayNumber) || null,
       note,
       object: object || null
-    });
+    };
 
+    receipts.push(receipt);
+    lastReceipt = receipt;
     store.receipts = receipts.slice(-100);
     $("witness").classList.add("hidden");
     $("receipt").classList.remove("hidden");
     $("receipt").scrollIntoView({ behavior: "smooth", block: "center" });
     renderInventory();
     renderRemember();
+  });
+
+  $("export-receipt").addEventListener("click", () => {
+    const receipt = lastReceipt || store.receipts[store.receipts.length - 1];
+    if (!receipt) return;
+
+    const blob = new Blob([JSON.stringify(receipt, null, 2) + "\n"], {
+      type: "application/json"
+    });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `dvote-receipt-${receipt.id}.json`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
   });
 
   $("close-day").addEventListener("click", () => {
